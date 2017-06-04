@@ -19,13 +19,13 @@ namespace TechJobs.Controllers
             if (searchType == "all")
             {
                 ViewBag.columns = ListController.columnChoices;
-                ViewBag.title = "All results";
+                ViewBag.title = "All results containing \"" + searchTerm + "\"";
                 jobs = JobData.FindByValue(searchTerm);
             }
             else
             {
                 ViewBag.columns = ListController.columnChoices;
-                ViewBag.title = "All results for " + searchTerm;
+                ViewBag.title = "All results for \"" + searchTerm + "\" in " + searchType;
                 jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
             }
 
